@@ -12,7 +12,7 @@ import './styles/styles.scss';
 const store = configureStore();
 
 
-//store.dispatch(setTextFilter('bill'));
+
 
 
 
