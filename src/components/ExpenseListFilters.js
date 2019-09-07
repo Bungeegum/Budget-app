@@ -25,7 +25,7 @@ class ExpenseListFilters extends React.Component{
                     }} 
                 />
                 <select type = "text" value= {this.props.filters.sortBy} onChange={(e)=>{
-                    if(e.target.value="date"){
+                    if(e.target.value==="date"){
                         this.props.dispatch(sortByDate());
                     }   else if (e.target.value==='amount'){
                         this.props.dispatch(sortByAmount());

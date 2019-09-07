@@ -35,7 +35,7 @@ export const removeExpense = ({ id } = {}) => ({
 export const startRemoveExpense=({ id } = {})=>{
   return (dispatch)=>{
     //access the fire base and remove that expense id then call the remove expense
-    database.ref(`expenses/${id}`).remove().then(()=>{
+    return database.ref(`expenses/${id}`).remove().then(()=>{
       dispatch(removeExpense({id}));
     })
   };
@@ -47,6 +47,14 @@ export const editExpense = (id, updates) => ({
   id,
   updates
 });
+
+export const setEditExpense = (id,updates)=>{
+  return (dispatch)=>{
+    return database.ref(`expense/${id}`).update(updates).then(()=>{
+      dispatch(editExpense(id,updates));
+    });
+  };
+};
 
 
 //Set expenses
