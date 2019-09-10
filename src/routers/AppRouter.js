@@ -4,11 +4,10 @@ import {Router, Route, Switch} from 'react-router-dom';
 import AddExpense from '../components/AddExpense';
 import BudgetDashboardPage from '../components/BudgetDashboardPage';
 import EditPage from '../components/EditPage';
-import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import logInPage from '../components/logIn';
 import PrivateRoute from './PrivateRoute';
-
+import PublicRoute from './PublicRoute';
 
 export const history = createHistory();
 
@@ -16,11 +15,11 @@ const AppRouter=()=>(
     <Router history={history}>
         <div>
             <Switch>
-                <Route path= "/" component={logInPage} exact={true}/>
+                <PublicRoute path= "/" component={logInPage} exact={true}/>
                 <PrivateRoute path="/dashBoard" component={BudgetDashboardPage}/>
                 <PrivateRoute path="/create" component={AddExpense}/>
                 <PrivateRoute path="/edit/:id" component={EditPage}/>
-                <Route path= "/help" component={HelpPage}/>
+               
                 <Route component={NotFoundPage}/>
             </Switch>
             
