@@ -38,7 +38,7 @@ export const startRemoveExpense=({ id } = {})=>{
   return (dispatch,getState)=>{
     const uid = getState().auth.uid;
     //access the fire base and remove that expense id then call the remove expense
-    return database.ref(`users/${uid}/expenses/expenses/${id}`).remove().then(()=>{
+    return database.ref(`users/${uid}/expenses/${id}`).remove().then(()=>{
       dispatch(removeExpense({id}));
     })
   };
