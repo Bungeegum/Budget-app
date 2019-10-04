@@ -16,5 +16,9 @@
     @media(min-width:$desktop-breakpoint){
         margin: 0 1.4rem 0 0;
 
-    }
+
+}
+.input-group__item2{
+    flex-direction:row;
+}
 }

@@ -9,10 +9,16 @@
     text-decoration:none;
     line-height:1;
     text-decoration: none;
+    @media(max-width:$desktop-breakpoint){
+        font-size:1.7rem;
+    }
 }
 
 .button--logout{
     background:none;
+    @media(max-width:$desktop-breakpoint){
+        font-size:1.7rem;
+    }
 }
 
 .button--remove{
